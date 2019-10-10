@@ -1,7 +1,29 @@
 # ESLint Action
 
-Offload your CI of running ESLint. With this action you can run it in parallel to your CI process, which means, faster builds!
+This custom Github Action lints our javasciprt repos with every push and
+annotate the diff with the errors and warnings reported by ESLint.
 
-This action will also annotate the diff with the errors and warnings reported by ESLint.
+## Usage
 
-![](screenshots/annotation.png)
+Add github workflow to automatically check linting with every push using
+`edlio/eslint-action`
+
+```yml
+# Save to .github/workflows/eslint.yml in your repo
+name: ESLint
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: ESLint checks
+      uses: edlio/eslint-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+Also refer to our shareable ESLint configuraiton
+[edlio/eslint-config-edlio](https://github.com/edlio/eslint-config-edlio)
