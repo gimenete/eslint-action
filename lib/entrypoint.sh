@@ -2,10 +2,7 @@
 
 set -e
 env
-cd admin-frontend
-
 ls
-env
 
 npm install
 
