@@ -8,16 +8,19 @@ Neat! Bet your CI doesn't do that.
 
 ## Usage
 
-`.github/main.workflow`:
+`.github/lint.yml`:
 
-```hcl
-workflow "Pull Request" {
-  on = "pull_request"
-  resolves = ["ESLint"]
-}
+```yml
+name: Lint
 
-action "ESLint" {
-  uses = "hallee/eslint-action@master"
-  secrets = ["GITHUB_TOKEN"]
-}
+on: pull_request
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: hallee/eslint-action@master
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
 ```
