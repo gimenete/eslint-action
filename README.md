@@ -23,4 +23,5 @@ jobs:
       - uses: hallee/eslint-action@master
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
+          source-root: optional-sub-dir
 ```
