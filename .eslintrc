@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "airbnb-base/legacy"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+  	"es6": true
+  }
+}
