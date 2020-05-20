@@ -8,8 +8,7 @@ Neat! Bet your CI doesn't do that.
 
 ## Usage
 
-`.github/lint.yml`:
-
+`.github/workflows/lint.yml`:
 ```yml
 name: Lint
 
