@@ -19,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: hallee/eslint-action@1.0.2
-        # The permissions for the GITHUB_TOKEN in forked repositories is read-only
+      - uses: hallee/eslint-action@1.0.3
+        # GITHUB_TOKEN in forked repositories is read-only
         # https://help.github.com/en/actions/reference/events-that-trigger-workflows#pull-request-event-pull_request
         if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }} 
         with:
